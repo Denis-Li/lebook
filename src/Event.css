@@ -1,0 +1,15 @@
+.ev {
+    color: black;
+    background-color: gray;
+    text-align: center;
+}
+.b-ev {
+    text-align: center;
+    background-color:lightgrey;
+}
+.test {
+    width: 100px;
+    height: 100px;
+    background: orange;
+    margin-left: 100px;
+}

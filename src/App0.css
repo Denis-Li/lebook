@@ -1,0 +1,8 @@
+nav .active {
+  color: red;
+}
+
+.primer {
+  color: green;
+  font-weight: 800;
+}

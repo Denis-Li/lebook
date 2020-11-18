@@ -1,8 +1,33 @@
-nav .active {
-  color: red;
+.app-wrapper {
+    box-sizing: border-box;
+    display: grid;
+    margin: 0 auto;
+    width: 1200px;
+    grid-template-areas: 
+    "h h"
+    "n c";
+    grid-template-rows: 160px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
 }
-
-.primer {
-  color: green;
-  font-weight: 800;
+.header {
+    grid-area: h;
+    background-color: gray;
+}
+.header-img {
+    width: 200px;
+}
+.nav {
+    grid-area: n;
+    background-color: burlywood;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+}
+.content {
+    grid-area: c;
+    background-color: coral;
 }

@@ -13,7 +13,12 @@ function Test() {
     let myRef = React.createRef();
     let textRef = React.createRef();  //home5.1
 
-    dalFOcr
+    // dalFOcr
+    let handler = () => {
+        let currentCount = count;
+        currentCount++;
+        setCount(currentCount);
+    }
 
     let addComment = () => {
         let commentValue = myRef.current.value;

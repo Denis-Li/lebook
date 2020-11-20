@@ -7,7 +7,7 @@ import profileCss from './Profile.module.css';
 
 const Profile = () => {
     return(
-        <div className={profileCss.content}>
+        <div>
             <div>
                 <img src="https://image.freepik.com/free-photo/communication-technology-internet-business-global-world-network-telecommunication-earth-cryptocurrency-blockchain-iot-elements-this-image-furnished-by-nasa_102957-60.jpg" alt=""/>
             </div>

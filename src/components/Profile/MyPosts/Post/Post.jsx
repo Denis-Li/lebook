@@ -11,7 +11,7 @@ const Post = (props) => {
             <img src="https://banner2.cleanpng.com/20180528/ccc/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538.jpg" alt=""/>
             {props.message}
             <div>
-                <span>{props.like}</span>
+                <span>like</span> {props.likesCount}
             </div>
         </div>
     )

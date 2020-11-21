@@ -1,5 +1,5 @@
 import React from 'react';
-import profileCss from './MyPosts.module.css';
+import myPostsCss from './MyPosts.module.css';
 import Post from './Post/Post';
 
 
@@ -8,12 +8,17 @@ import Post from './Post/Post';
 const MyPosts = (props) => {
     debugger;
     return(
-        <div>my posts
+        <div className={myPostsCss.postsBlock}>
+            <h3>My posts</h3>
             <div>
-                <textarea></textarea>
-                <button>Add post</button>
+                <div>
+                    <textarea></textarea>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
-            <div className={profileCss.posts}>
+            <div className={myPostsCss.posts}>
                 <Post message='Hi, how are you?' likesCount='50' />
                 <Post message="It's my first post" likesCount='32' />
             </div>

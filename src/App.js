@@ -12,15 +12,25 @@ import News from './components/News/News';
 
 
 const App = (props) => {
+  
+  
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-          <Route exact path='/dialogs' component={Dialogs} />
+          {/* <Route exact path='/dialogs' component={Dialogs} />
           <Route path='/profile' component={Profile} />
-          <Route path='/news' component={News} />
+          <Route path='/news' component={News} /> */}
+
+
+          <Route exact path='/dialogs' render={ () => <Dialogs messages={props.appState.messages} dialogs={props.appState.dialogs} /> } />
+          <Route path='/profile' render={ () => <Profile posts={props.appState.posts} /> } />
+          <Route path='/news' render={ () => <News /> } />
+
+
         </div>
         
       </div>

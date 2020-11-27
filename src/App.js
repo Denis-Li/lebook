@@ -16,7 +16,6 @@ const App = (props) => {
   
 
   return (
-    <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
         <Navbar />
@@ -26,16 +25,11 @@ const App = (props) => {
           <Route path='/news' component={News} /> */}
 
 
-          <Route exact path='/dialogs' render={ () => <Dialogs messages={props.appState.messages} dialogs={props.appState.dialogs} /> } />
-          <Route path='/profile' render={ () => <Profile posts={props.appState.posts} /> } />
+          <Route exact path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
+          <Route path='/profile' render={ () => <Profile state={props.state.profilePage} /> } />
           <Route path='/news' render={ () => <News /> } />
-
-
         </div>
-        
       </div>
-
-    </BrowserRouter>
   );
 }
 

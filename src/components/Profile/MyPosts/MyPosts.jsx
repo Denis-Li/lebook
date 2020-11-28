@@ -6,7 +6,6 @@ import Post from './Post/Post';
 // https://preview.themeforest.net/item/matebook-social-network-html-template/full_screen_preview/25860967?_ga=2.133018510.1410821775.1605738375-1770383739.1605738256
 
 const MyPosts = (props) => {
-    debugger;
 
     // let posts = [
     //     {id: 1, message: 'Hi, how are you?', likesCount: 12},
@@ -19,8 +18,10 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
+        debugger;
         let text = newPostElement.current.value;
-        alert (text)
+        props.addPost(text);
+        newPostElement.current.value = '';
     }
 
     return(

@@ -7,6 +7,7 @@ import Profile from './components/Profile/Profile';
 
 import { Router, Switch, Route, NavLink, BrowserRouter } from 'react-router-dom';
 import News from './components/News/News';
+import { addPost } from './redux/state';
 
 
 
@@ -26,7 +27,7 @@ const App = (props) => {
 
 
           <Route exact path='/dialogs' render={ () => <Dialogs state={props.state.dialogsPage} /> } />
-          <Route path='/profile' render={ () => <Profile state={props.state.profilePage} /> } />
+          <Route path='/profile' render={ () => <Profile state={props.state.profilePage} addPost={props.addPost} /> } />
           <Route path='/news' render={ () => <News /> } />
         </div>
       </div>

@@ -10,11 +10,15 @@ let addMessage = () => {
     alert (text2)
 }
 
+let onMessageChange = () => {
+
+}
+
 const Dialogs = (props) => {
-    let dialogsElements = props.state.dialogs
+    let dialogsElements = props.dialogsPage.dialogs
         .map( d => <DialogItem name={d.name} id={d.id} /> );
 
-    let messagesElements = props.state.messages
+    let messagesElements = props.dialogsPage.messages
         .map( m => <Message mes={m.message}/> );
 
     return (
@@ -25,7 +29,7 @@ const Dialogs = (props) => {
             <div className={dialogCss.messages}>
                 {messagesElements}
                 <div>
-                    <textarea ref={ newMessageElement }></textarea>
+                    <textarea onChange={onMessageChange} ref={ newMessageElement } value={props.newMessageText} />
                 </div>
                 <div>
                     <button onClick={ addMessage }>Add message</button>

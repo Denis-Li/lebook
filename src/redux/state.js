@@ -28,8 +28,7 @@ let store = {
                 {id: 4, message: 'Yo'},
                 {id: 5, message: 'Yo'}
             ],
-            newMessageBody: '',
-            newMessageText: 'What do you do?'
+            newMessageBody: ""
         },
         sidebar: {}
     },
@@ -56,11 +55,11 @@ let store = {
             this._state.profilePage.newPostText = action.newText;
             this._callSubscriber(this._state);
         } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
-            this._state.profilePage.newMessageBody = action.body;
+            this._state.dialogsPage.newMessageBody = action.body;
             this._callSubscriber(this._state);
         } else if (action.type === SEND_MESSAGE) {
-            let body = this._state.profilePage.newMessageBody;
-            this._state.profilePage.newMessageBody = '';
+            let body = this._state.dialogsPage.newMessageBody;
+            this._state.dialogsPage.newMessageBody = '';
             this._state.dialogsPage.messages.push({id: 6, message: body});
             this._callSubscriber(this._state);
         }

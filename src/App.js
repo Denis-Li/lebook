@@ -7,30 +7,21 @@ import Profile from './components/Profile/Profile';
 
 import { Router, Switch, Route, NavLink, BrowserRouter } from 'react-router-dom';
 import News from './components/News/News';
-import store, { addPost } from './redux/state';
+import store, { addPost } from './redux/store';
 
 
 
 
 const App = (props) => {
-  
-  
-
   return (
       <div className='app-wrapper'>
         <Header />
         <Navbar />
         <div className='app-wrapper-content'>
-          {/* <Route exact path='/dialogs' component={Dialogs} />
-          <Route path='/profile' component={Profile} />
-          <Route path='/news' component={News} /> */}
-
-
           <Route exact path='/dialogs' render={ () => <Dialogs 
             store={props.store} /> } />
           <Route path='/profile' render={ () => <Profile 
-            profilePage={props.state.profilePage} 
-            dispatch={props.dispatch} /> } />
+            store={props.store} /> } />
           <Route path='/news' render={ () => <News /> } />
         </div>
       </div>

@@ -5,9 +5,8 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 
 import { Router, Switch, Route, NavLink, BrowserRouter } from 'react-router-dom';
-import News from './components/News/News';
-import store, { addPost } from './redux/store';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import Users from './components/Users/Users';
 
 
 
@@ -20,7 +19,7 @@ const App = (props) => {
         <div className='app-wrapper-content'>
           <Route exact path='/dialogs' render={ () => <DialogsContainer /> } />
           <Route path='/profile' render={ () => <Profile /> } />
-          <Route path='/news' render={ () => <News /> } />
+          <Route path='/users' render={ () => <Users /> } />
         </div>
       </div>
   );

@@ -9,7 +9,7 @@ import MyPosts from './MyPosts';
 const mapStateToProps = (state) => {
     return {
         posts: state.profilePage.posts,
-        newPostText: state.profilePage.NewPostText
+        newPostText: state.profilePage.newPostText
     }
 }
 const mapDispatchToProps = (dispatch) => {

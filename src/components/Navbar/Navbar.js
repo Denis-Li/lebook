@@ -13,7 +13,7 @@ const Navbar = () => {
                 <NavLink to="/dialogs" activeClassName={navbarCss.active}>Massages</NavLink>
             </div>
             <div  className={navbarCss.item}>
-                <NavLink to="/news" activeClassName={navbarCss.active}>News</NavLink> 
+                <NavLink to="/users" activeClassName={navbarCss.active}>Users</NavLink> 
             </div>
       </nav>
     )

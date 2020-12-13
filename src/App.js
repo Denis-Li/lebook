@@ -6,7 +6,7 @@ import Profile from './components/Profile/Profile';
 
 import { Router, Switch, Route, NavLink, BrowserRouter } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
-import Users from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -19,7 +19,7 @@ const App = (props) => {
         <div className='app-wrapper-content'>
           <Route exact path='/dialogs' render={ () => <DialogsContainer /> } />
           <Route path='/profile' render={ () => <Profile /> } />
-          <Route path='/users' render={ () => <Users /> } />
+          <Route path='/users' render={ () => <UsersContainer /> } />
         </div>
       </div>
   );

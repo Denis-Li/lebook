@@ -11,31 +11,31 @@ import { Textarea } from '../../common/FormsControls/FormsControls';
 
 
 
-class MyPosts extends Component {
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log("render yo");
+const MyPosts = React.memo(props => {
+    
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     return nextProps != this.props || nextState != this.state;
+    // }
+    console.log("r yo");
+    let postsElements = props.posts
+        .map( p => <Post message={p.message} likesCount={p.likesCount} />);
+
+    let newPostElement = React.createRef();
+
+    let onAddPost = (values) => {
+        props.addPost(values.newPostText);
     }
-    render() {
-        let postsElements = this.props.posts
-            .map( p => <Post message={p.message} likesCount={p.likesCount} />);
-    
-        let newPostElement = React.createRef();
-    
-        let onAddPost = (values) => {
-            this.props.addPost(values.newPostText);
-        }
-    
-        return(
-            <div className={myPostsCss.postsBlock}>
-                <h3>My posts</h3>
-                <AddNewPostForm onSubmit={onAddPost} />
-                <div className={myPostsCss.posts}>
-                    {postsElements}
-                </div>
+
+    return(
+        <div className={myPostsCss.postsBlock}>
+            <h3>My posts</h3>
+            <AddNewPostForm onSubmit={onAddPost} />
+            <div className={myPostsCss.posts}>
+                {postsElements}
             </div>
-        )
-    }
-}
+        </div>
+    )
+});
 
 const maxLength10 = maxLengthCreator(10);
 

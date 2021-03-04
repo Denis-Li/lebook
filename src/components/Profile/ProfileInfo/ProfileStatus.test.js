@@ -8,16 +8,25 @@ describe("ProfileStatus component", () => {
       const instance = component.getInstance();
       expect(instance.state.status).toBe("it-kamasutra.com");
     });
-    test("ufter creation <span> should be displayed", () => {
+    test("after creation <span> should be displayed", () => {
       const component = create(<ProfileStatus status="it-kamasutra.com" />);
       const root = component.root;
       let span = root.findByType("span")
-      expect(span.length).toBe(1);
+      expect(span).not.toBeNull(1);
     });
-    test("ufter creation <span> should contains correct status", () => {
+    test("after creation <input> shouldn't be displayed", () => {
+      const component = create(<ProfileStatus status="it-kamasutra.com" />);
+      const root = component.root;
+
+      expect(() => {
+        let input = root.findByType("input")
+
+      }).toThrow();
+    });
+    test("after creation <span> should contains correct status", () => {
       const component = create(<ProfileStatus status="it-kamasutra.com" />);
       const root = component.root;
       let span = root.findByType("span")
-      expect(span.innerText).toBe("it-kamasutra.com");
+      expect(span.children[0]).toBe("it-kamasutra.com");
     });
 });

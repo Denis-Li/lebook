@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import usersCss from './Paginator.module.css';
+import cn from "classnames";
 
 
 let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portionSize = 10}) => {
@@ -29,10 +30,10 @@ let Paginator = ({totalItemsCount, pageSize, currentPage, onPageChanged, portion
                         key={p}
                         onClick={ (e) => {
                             onPageChanged(p);
-                        }}>p</span>
+                        }}>{p}</span>
             })}
             { portionCount > portionNumber &&
-            <button onClick={ () => { setPortionNumber(portionNumber + 1)}}}
+            <button onClick={ () => { setPortionNumber(portionNumber + 1)}}>NEXT</button>}
         </div>
 }
 export default Paginator;

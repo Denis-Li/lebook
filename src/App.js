@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Route, withRouter } from 'react-router-dom';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
+// import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/HeaderC/HeaderContainer';
@@ -13,6 +13,7 @@ import { compose } from 'redux';
 import Preloader from './components/common/Preloader/Preloader';
 import store from './redux/redux-store'
 
+const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 
 
 

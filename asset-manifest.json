@@ -1,32 +1,32 @@
 {
   "files": {
     "main.css": "/lebook/static/css/main.5519bb87.chunk.css",
-    "main.js": "/lebook/static/js/main.bc3a66c8.chunk.js",
-    "main.js.map": "/lebook/static/js/main.bc3a66c8.chunk.js.map",
-    "runtime-main.js": "/lebook/static/js/runtime-main.64595ac0.js",
-    "runtime-main.js.map": "/lebook/static/js/runtime-main.64595ac0.js.map",
-    "static/js/2.2ec0aff3.chunk.js": "/lebook/static/js/2.2ec0aff3.chunk.js",
-    "static/js/2.2ec0aff3.chunk.js.map": "/lebook/static/js/2.2ec0aff3.chunk.js.map",
+    "main.js": "/lebook/static/js/main.c1c4f98d.chunk.js",
+    "main.js.map": "/lebook/static/js/main.c1c4f98d.chunk.js.map",
+    "runtime-main.js": "/lebook/static/js/runtime-main.0415a095.js",
+    "runtime-main.js.map": "/lebook/static/js/runtime-main.0415a095.js.map",
+    "static/js/2.eea02241.chunk.js": "/lebook/static/js/2.eea02241.chunk.js",
+    "static/js/2.eea02241.chunk.js.map": "/lebook/static/js/2.eea02241.chunk.js.map",
     "static/css/3.6b01b9e2.chunk.css": "/lebook/static/css/3.6b01b9e2.chunk.css",
     "static/js/3.e90931ba.chunk.js": "/lebook/static/js/3.e90931ba.chunk.js",
     "static/js/3.e90931ba.chunk.js.map": "/lebook/static/js/3.e90931ba.chunk.js.map",
     "static/css/4.f9910a4c.chunk.css": "/lebook/static/css/4.f9910a4c.chunk.css",
-    "static/js/4.faeaa0c3.chunk.js": "/lebook/static/js/4.faeaa0c3.chunk.js",
-    "static/js/4.faeaa0c3.chunk.js.map": "/lebook/static/js/4.faeaa0c3.chunk.js.map",
+    "static/js/4.2c5a4968.chunk.js": "/lebook/static/js/4.2c5a4968.chunk.js",
+    "static/js/4.2c5a4968.chunk.js.map": "/lebook/static/js/4.2c5a4968.chunk.js.map",
     "static/js/5.81409a04.chunk.js": "/lebook/static/js/5.81409a04.chunk.js",
     "static/js/5.81409a04.chunk.js.map": "/lebook/static/js/5.81409a04.chunk.js.map",
     "index.html": "/lebook/index.html",
     "static/css/3.6b01b9e2.chunk.css.map": "/lebook/static/css/3.6b01b9e2.chunk.css.map",
     "static/css/4.f9910a4c.chunk.css.map": "/lebook/static/css/4.f9910a4c.chunk.css.map",
     "static/css/main.5519bb87.chunk.css.map": "/lebook/static/css/main.5519bb87.chunk.css.map",
-    "static/js/2.2ec0aff3.chunk.js.LICENSE.txt": "/lebook/static/js/2.2ec0aff3.chunk.js.LICENSE.txt",
+    "static/js/2.eea02241.chunk.js.LICENSE.txt": "/lebook/static/js/2.eea02241.chunk.js.LICENSE.txt",
     "static/media/spinner2.8221e44f.svg": "/lebook/static/media/spinner2.8221e44f.svg",
     "static/media/user.4fae4de6.png": "/lebook/static/media/user.4fae4de6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.64595ac0.js",
-    "static/js/2.2ec0aff3.chunk.js",
+    "static/js/runtime-main.0415a095.js",
+    "static/js/2.eea02241.chunk.js",
     "static/css/main.5519bb87.chunk.css",
-    "static/js/main.bc3a66c8.chunk.js"
+    "static/js/main.c1c4f98d.chunk.js"
   ]
 }

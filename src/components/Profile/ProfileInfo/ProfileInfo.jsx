@@ -9,6 +9,10 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
     if (!profile) {
         return <Preloader />
     }
+
+    const onMainPhotoSelected = (e) => {
+
+    }
     return(
         <div>
             <div>
@@ -16,6 +20,7 @@ const ProfileInfo = ({profile, status, updateStatus}) => {
             </div>
             <div className={profileInfoCss.descriptionBlock}>
                 <img src={profile.photos.large || userPhoto} alt="" className={profileInfoCss.imgBlock} />
+                { isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
                 <div>{profile.contacts.instagram}</div>
                 <div>{profile.fullName}</div>

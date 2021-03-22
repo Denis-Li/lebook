@@ -23,6 +23,16 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
             <div className={profileInfoCss.descriptionBlock}>
                 <img src={profile.photos.large || userPhoto} alt="" className={profileInfoCss.imgBlock} />
                 { isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
+
+                <div>
+                    <div>
+                        <b>Looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
+                    </div>
+                    <div>
+                        <b>About me</b>: {profile.aboutMe}
+                    </div>
+                </div>
+
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
                 <div>{profile.contacts.instagram}</div>
                 <div>{profile.fullName}</div>

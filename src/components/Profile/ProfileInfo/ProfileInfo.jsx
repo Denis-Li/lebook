@@ -26,10 +26,21 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
 
                 <div>
                     <div>
-                        <b>Looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
+                        <b>Full name</b>: {profile.fullName}
                     </div>
                     <div>
+                        <b>Looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
+                    </div>
+                    {profile.lookingForAJob && 
+                        <div>
+                            <b>My professional skills</b>: {profile.lookingForAJobDesvription}
+                        </div>
+                    }
+                    <div>
                         <b>About me</b>: {profile.aboutMe}
+                    </div>
+                    <div>
+                        {/* <b>Contacts</b>: {profile.contacts} */}
                     </div>
                 </div>
 
@@ -41,6 +52,8 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
     )
 }
 
-
+const Contact = ({contactTitle, contactValue}) => {
+    return <div><b>{contactTitle}</b>: {contactValue}</div>
+}
 
 export default ProfileInfo;

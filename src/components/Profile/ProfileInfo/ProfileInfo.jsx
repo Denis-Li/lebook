@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import profileInfoCss from './ProfileInfo.module.css';
 import Preloader from '../../common/Preloader/Preloader'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 import userPhoto from '../../../assets/images/user.png';
+import ProfileDataForm from './ProfileDataForm';
 
 
 const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+
+    let [editMode, setEditMode] = useState(false);
+
     if (!profile) {
         return <Preloader />
     }
@@ -24,7 +28,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
                 <img src={profile.photos.large || userPhoto} alt="" className={profileInfoCss.imgBlock} />
                 { isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
 
-                <ProfileData profile={profile} />
+                { editMode 
+                    ? <ProfileDataForm profile={profile} /> 
+                    : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner} /> }
 
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
                 <div>{profile.contacts.instagram}</div>
@@ -34,8 +40,9 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
     )
 }
 
-const ProfileData = ({profile}) => {
+const ProfileData = ({profile, isOwner, goToEditMode}) => {
     return <div>
+            {isOwner && <div><button onClick={goToEditMode}>edit</button></div>}
             <div>
                 <b>Full name</b>: {profile.fullName}
             </div>
@@ -57,6 +64,7 @@ const ProfileData = ({profile}) => {
             </div>
     </div>
 }
+
 
 const Contact = ({contactTitle, contactValue}) => {
     return <div className={profileInfoCss.contact}><b>{contactTitle}</b>: {contactValue}</div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-import { createField, Input } from '../../common/FormsControls/FormsControls';
+import { createField, Input, Textarea } from '../../common/FormsControls/FormsControls';
 
 
 
@@ -11,16 +11,17 @@ const ProfileDataForm = ({profile}) => {
             <b>Full name</b>: {createField("Full name", "fullName", [], Input)}
         </div>
         <div>
-            <b>Looking for a job</b>: {profile.lookingForAJob ? "yes" : "no"}
-            { createField("", "lookingForAJob", [], Input, {type: "checkbox"})}
+            <b>Looking for a job</b>: { createField("", "lookingForAJob", [], Input, {type: "checkbox"})}
         </div>
-        {profile.lookingForAJob && 
-            <div>
-                <b>My professional skills</b>: {profile.lookingForAJobDesvription}
-            </div>
-        }
+        
+        <div>
+            <b>My professional skills</b>: 
+            { createField("My professional skills", "lookingForAJobDesvription", [], Textarea )}
+        </div>
+        
         <div>
             <b>About me</b>: {profile.aboutMe}
+            { createField("About me", "aboutMe", [], Textarea )}
         </div>
         {/* <div>
             <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {

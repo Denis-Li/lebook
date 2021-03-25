@@ -1,12 +1,13 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
+
 import { createField, Input, Textarea } from '../../common/FormsControls/FormsControls';
 
 
 
-const ProfileDataForm = ({profile}) => {
-    return <form>
-        <div><button onClick={() => {}}>save</button></div>
+const ProfileDataForm = ({handleSubmit, profile}) => {
+    return <form onSubmit={handleSubmit}>
+        <div><button>save</button></div>
         <div>
             <b>Full name</b>: {createField("Full name", "fullName", [], Input)}
         </div>

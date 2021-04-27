@@ -1,11 +1,11 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
-
+import profileInfoCss from './ProfileInfo.module.css';
 import { createField, Input, Textarea } from '../../common/FormsControls/FormsControls';
 
 
 
-const ProfileDataForm = ({handleSubmit}) => {
+const ProfileDataForm = ({handleSubmit, profile}) => {
     return <form onSubmit={handleSubmit}>
         <div><button>save</button></div>
         <div>
@@ -24,11 +24,13 @@ const ProfileDataForm = ({handleSubmit}) => {
             <b>About me</b>:
             { createField("About me", "aboutMe", [], Textarea )}
         </div>
-        {/* <div>
+        <div>
             <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
-                return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]} />
+                return <div className={profileInfoCss.contact}>
+                    <b>{key}: {createField("Full name", "fullName", [], Input)}</b>
+                </div>
             })}
-        </div> */}
+        </div>
     </form>
 }
 

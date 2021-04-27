@@ -2,12 +2,16 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import profileInfoCss from './ProfileInfo.module.css';
 import { createField, Input, Textarea } from '../../common/FormsControls/FormsControls';
+import style from '../../common/FormsControls/FormControls.module.css';
 
 
-
-const ProfileDataForm = ({handleSubmit, profile}) => {
+const ProfileDataForm = ({handleSubmit, profile, error}) => {
     return <form onSubmit={handleSubmit}>
         <div><button>save</button></div>
+        {error && <div className={style.formSummaryError}>
+                {error}
+            </div>
+        }
         <div>
             <b>Full name</b>: {createField("Full name", "fullName", [], Input)}
         </div>
@@ -17,7 +21,7 @@ const ProfileDataForm = ({handleSubmit, profile}) => {
         
         <div>
             <b>My professional skills</b>: 
-            { createField("My professional skills", "lookingForAJobDesvription", [], Textarea )}
+            { createField("My professional skills", "lookingForAJobDescription", [], Textarea )}
         </div>
         
         <div>
@@ -26,8 +30,8 @@ const ProfileDataForm = ({handleSubmit, profile}) => {
         </div>
         <div>
             <b>Contacts</b>: {Object.keys(profile.contacts).map(key => {
-                return <div className={profileInfoCss.contact}>
-                    <b>{key}: {createField("Full name", "fullName", [], Input)}</b>
+                return <div key={key} className={profileInfoCss.contact}>
+                    <b>{key}: {createField(key, "contacts." + key, [], Input)}</b>
                 </div>
             })}
         </div>

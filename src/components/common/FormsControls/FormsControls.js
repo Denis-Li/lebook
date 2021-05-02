@@ -1,5 +1,5 @@
-import React from 'react';
-import { Field } from 'redux-form';
+import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 import styles from './FormControls.module.css';
 
 
@@ -34,3 +34,4 @@ export const createField = (placeholder, name, validators, component, props = {}
         /> {text}
     </div>
 }
+

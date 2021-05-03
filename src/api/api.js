@@ -69,3 +69,10 @@ export const getUsers2 = (currentPage = 1, pageSize = 10) => {
         }
     );
 }
+
+export const securityAPI = {
+    getCaptchaUrl() {
+        return instance.get(`security/get-captcha-url`);
+    }
+    
+}

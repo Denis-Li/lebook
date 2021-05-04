@@ -10,12 +10,13 @@ let initialState = {
     login: null,
     isAuth: false,
     isFetching: false,
-    captchaUrl: null
+    captchaUrl: null // if null, then captcha is not required
 };
 
 const authReducer = (state = initialState, action) => {
     switch(action.type) {
         case SET_USER_DATA:
+        case GET_CAPTCHA_URL_SUCCESS:
             return { 
                 ...state,
                 ...action.payload
@@ -38,14 +39,17 @@ export const getAuthUserData = () => async (dispatch) => {
         dispatch(setAuthUserData(id, email, login, true));
     }
 }
-export const login = (email, password, rememberMe) => async (dispatch) => {
+export const login = (email, password, rememberMe, captcha) => async (dispatch) => {
 
 
-    let response = await authAPI.login(email, password, rememberMe);
+    let response = await authAPI.login(email, password, rememberMe, captcha);
     if (response.data.resultCode === 0) {
         
         dispatch(getAuthUserData());
     } else {
+        if (response.data.resultCode === 10) {
+            dispatch(getCaptchaUrl());
+        }
         let message = response.data.messages.length > 0 ? response.data.messages[0] : "Some error";
         dispatch(stopSubmit("login", {_error: message}));
     }

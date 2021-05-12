@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import { HashRouter, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/HeaderC/HeaderContainer';
 import LoginPage from './components/Login/Login';
@@ -22,6 +22,7 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 class App extends Component {
   componentDidMount() {
     this.props.initializeApp();
+    
   }
   render() {
     if (!this.props.initialized) {
@@ -34,12 +35,18 @@ class App extends Component {
         <HeaderContainer />
         <Navbar />
         <div className='app-wrapper-content'>
-          <Route exact path='/dialogs' 
-            render={withSuspense(DialogsContainer)} />
-          <Route path='/profile/:userId?' 
-            render={withSuspense(ProfileContainer)} />
-          <Route path='/users' render={ () => <UsersContainer /> } />
-          <Route path='/login' render={ () => <LoginPage /> } />
+          <Switch>
+            <Route exact path='/' 
+              render={() => <Redirect to={"/profile"}/>} />
+
+            <Route exact path='/dialogs' 
+              render={withSuspense(DialogsContainer)} />
+            <Route path='/profile/:userId?' 
+              render={withSuspense(ProfileContainer)} />
+            <Route path='/users' render={ () => <UsersContainer /> } />
+            <Route path='/login' render={ () => <LoginPage /> } />
+            <Route path='*' render={ () => <div>404 not found</div> } />
+          </Switch>
         </div>
       </div>
     );
@@ -56,11 +63,11 @@ let AppContainer = compose(
   connect (mapStateToProps, {initializeApp})) (App);
 
 const SamurajJSApp = (props) => {
-  return <HashRouter>
+  return <BrowserRouter>
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </HashRouter>
+  </BrowserRouter>
 }
 
 export default SamurajJSApp;

@@ -42,8 +42,8 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
                     : <ProfileData goToEditMode={() => {setEditMode(true)}} profile={profile} isOwner={isOwner} /> }
 
                 <ProfileStatusWithHooks status={status} updateStatus={updateStatus} />
-                <div>{profile.contacts.instagram}</div>
-                <div>{profile.fullName}</div>
+                {/* <div>{profile.contacts.instagram}</div>
+                <div>{profile.fullName}</div> */}
             </div>
         </div>
     )
